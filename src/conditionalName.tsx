@@ -1,8 +1,6 @@
 import { useState } from "react";
+import { saveItem } from "./utils";
 
-function saveItem(name: string, id: number) {
-  console.log(name, id)
-}
 
 function ConditionalName({ name, id, isCheckedAdmin }: any) {
   const [newName, setNewName] = useState(name);
@@ -14,7 +12,7 @@ function ConditionalName({ name, id, isCheckedAdmin }: any) {
     </>
   )
 
-  return <h2>{name}</h2 >
+  return <p>{name}</p >
 }
 
 export default ConditionalName;
