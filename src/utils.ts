@@ -4,11 +4,16 @@ export function getItems() {
   return fetch(`${endpoint}/items`)
     .then(r => r.json())
 }
+
 export function saveItem(name: string, id: number) {
+  const token = localStorage.getItem('token');
+  if (!token) return console.error('No token found');
+
   fetch(`${endpoint}/items/${id}`, {
     method: "PATCH",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "authorization": token
     },
     body: JSON.stringify({ name })
   })

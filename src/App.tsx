@@ -6,8 +6,7 @@ import { getItems, logIn } from './utils';
 function App() {
   const [isCheckedAdmin, setIsCheckedAdmin] = useState(false);
   const [items, setItems] = useState([]);
-  const [user, setUser] = useState({
-  });
+  const [user, setUser] = useState({});
 
   function handleLoginAsEd() {
     logIn('ed@email.com', 'bla').then(response => {
@@ -26,7 +25,7 @@ function App() {
     })
   }
 
-
+  //@ts-ignore
   const isUserAnAdmin = user.privileges === 'admin';
 
   useEffect(() => {
