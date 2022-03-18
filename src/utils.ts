@@ -13,3 +13,14 @@ export function saveItem(name: string, id: number) {
     body: JSON.stringify({ name })
   })
 }
+
+export function logIn(email, password) {
+  return fetch(`${endpoint}/login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ email, password })
+  })
+    .then(r => r.json())
+}
